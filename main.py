@@ -1,6 +1,13 @@
 estudiantes = []
 
 
+def validar_nombre(nombre):
+    if nombre == "":
+        print("Nombre incorrecto")
+        return False
+    return True
+
+
 def validar_nota(nota):
     if nota < 0 or nota > 10:
         print("Nota incorrecta")
@@ -19,8 +26,7 @@ def determinar_estado(suma):
 
 
 def registrar_estudiante(nombre, nota1, nota2, nota3):
-    if nombre == "":
-        print("Nombre incorrecto")
+    if not validar_nombre(nombre):
         return
 
     if not validar_nota(nota1):
@@ -79,7 +85,7 @@ def buscar_estudiante(nombre):
             )
             encontrado = True
 
-    if encontrado == False:
+    if not encontrado:
         print("Estudiante no encontrado")
 
 
