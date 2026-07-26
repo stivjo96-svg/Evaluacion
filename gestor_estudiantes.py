@@ -22,7 +22,9 @@ def calcular_suma(nota1, nota2, nota3):
 
 
 def determinar_estado(suma):
-    if suma >= NOTA_MINIMA_APROBACION:
+    if suma >= 28:
+        return "EXCELENTE"
+    elif suma >= NOTA_MINIMA_APROBACION:
         return "APROBADO"
     return "REPROBADO"
 
@@ -89,3 +91,6 @@ def buscar_estudiante(nombre):
 
     if not encontrado:
         print("Estudiante no encontrado")
+
+def obtener_estudiantes():
+    return estudiantes
