@@ -1,5 +1,7 @@
 estudiantes = []
 
+NOTA_MINIMA_APROBACION = 24
+
 
 def validar_nombre(nombre):
     if nombre == "":
@@ -20,7 +22,7 @@ def calcular_suma(nota1, nota2, nota3):
 
 
 def determinar_estado(suma):
-    if suma >= 24:
+    if suma >= NOTA_MINIMA_APROBACION:
         return "APROBADO"
     return "REPROBADO"
 
@@ -39,7 +41,6 @@ def registrar_estudiante(nombre, nota1, nota2, nota3):
         return
 
     suma = calcular_suma(nota1, nota2, nota3)
-
     estado = determinar_estado(suma)
 
     estudiantes.append({
