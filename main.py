@@ -8,6 +8,10 @@ def validar_nota(nota):
     return True
 
 
+def calcular_suma(nota1, nota2, nota3):
+    return nota1 + nota2 + nota3
+
+
 def determinar_estado(suma):
     if suma >= 24:
         return "APROBADO"
@@ -28,7 +32,7 @@ def registrar_estudiante(nombre, nota1, nota2, nota3):
     if not validar_nota(nota3):
         return
 
-    suma = nota1 + nota2 + nota3
+    suma = calcular_suma(nota1, nota2, nota3)
 
     estado = determinar_estado(suma)
 
