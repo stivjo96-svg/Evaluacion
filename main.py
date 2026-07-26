@@ -8,6 +8,12 @@ def validar_nota(nota):
     return True
 
 
+def determinar_estado(suma):
+    if suma >= 24:
+        return "APROBADO"
+    return "REPROBADO"
+
+
 def registrar_estudiante(nombre, nota1, nota2, nota3):
     if nombre == "":
         print("Nombre incorrecto")
@@ -24,10 +30,7 @@ def registrar_estudiante(nombre, nota1, nota2, nota3):
 
     suma = nota1 + nota2 + nota3
 
-    if suma >= 24:
-        estado = "APROBADO"
-    else:
-        estado = "REPROBADO"
+    estado = determinar_estado(suma)
 
     estudiantes.append({
         "nombre": nombre,
