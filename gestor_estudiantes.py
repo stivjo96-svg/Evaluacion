@@ -1,12 +1,30 @@
-from gestor_estudiantes import (
-    validar_nombre,
-    validar_nota,
-    calcular_suma,
-    determinar_estado,
-)
-
 estudiantes = []
 
+NOTA_MINIMA_APROBACION = 24
+
+
+def validar_nombre(nombre):
+    if nombre == "":
+        print("Nombre incorrecto")
+        return False
+    return True
+
+
+def validar_nota(nota):
+    if nota < 0 or nota > 10:
+        print("Nota incorrecta")
+        return False
+    return True
+
+
+def calcular_suma(nota1, nota2, nota3):
+    return nota1 + nota2 + nota3
+
+
+def determinar_estado(suma):
+    if suma >= NOTA_MINIMA_APROBACION:
+        return "APROBADO"
+    return "REPROBADO"
 
 def registrar_estudiante(nombre, nota1, nota2, nota3):
 
@@ -71,12 +89,3 @@ def buscar_estudiante(nombre):
 
     if not encontrado:
         print("Estudiante no encontrado")
-
-
-registrar_estudiante("Ana", 8, 8, 8)
-registrar_estudiante("Luis", 6, 6, 6)
-registrar_estudiante("Carlos", 10, 9, 10)
-
-listar_estudiantes()
-
-buscar_estudiante("Ana")
